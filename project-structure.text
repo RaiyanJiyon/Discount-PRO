@@ -1,0 +1,50 @@
+src/
+├── layouts/
+│   └── MainLayout.jsx        # Contains Header and Footer
+├── pages/
+│   ├── Auth/
+│   │   ├── Login.jsx
+│   │   ├── Register.jsx
+│   │   └── ForgotPassword.jsx
+│   ├── Brands/
+│   │   ├── BrandsPage.jsx    # All brands listing
+│   │   └── BrandDetails.jsx  # Single brand coupons
+│   ├── Profile/
+│   │   ├── Profile.jsx
+│   │   └── UpdateProfile.jsx
+│   ├── Home.jsx
+│   ├── AboutDev.jsx
+│   └── ErrorPage.jsx
+├── components/
+│   ├── shared/
+│   │   ├── Header.jsx
+│   │   ├── Navbar.jsx
+│   │   └── Footer.jsx
+│   ├── home/
+│   │   ├── Banner.jsx
+│   │   ├── TopBrands.jsx     # For marquee section
+│   │   └── SaleBrands.jsx    # Brands with active sales
+│   ├── brands/
+│   │   ├── BrandCard.jsx
+│   │   ├── CouponCard.jsx
+│   │   └── SearchBar.jsx
+│   └── ui/                   # Reusable UI components
+│       ├── Button.jsx
+│       ├── CopyButton.jsx    # For copying coupon codes
+│       └── Rating.jsx        # Star rating component
+├── hooks/
+│   ├── useAuth.jsx          # Authentication hook
+│   └── useCopyToClipboard.jsx # Custom hook for copy functionality
+├── contexts/
+│   └── AuthProvider.jsx     # Global auth state management
+├── routes/
+│   ├── Routes.jsx
+│   └── PrivateRoute.jsx
+├── data/
+│   └── brandsData.js        # JSON data for brands and coupons
+├── utils/
+│   ├── firebase.js          # Firebase configuration
+│   └── animation.js         # Animation utilities
+└── assets/
+    ├── images/
+    └── icons/
