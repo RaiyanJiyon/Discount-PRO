@@ -14,7 +14,7 @@ const SaleBrands = () => {
         <div className="bg-[#f8fafc] pt-6 pb-20">
             <h2 className="text-3xl text-[#E1713B] font-bold text-center">🔥 Sale is On! Grab Your Deals Now!</h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-11/12 mx-auto mt-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-11/12 max-w-7xl mx-auto mt-16">
                 {
                     brands.map((brand, idx) => (
                         <div key={idx} className="card bg-base-100 border border-gray-200 shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110">
