@@ -36,7 +36,7 @@ src/
 │   ├── useAuth.jsx          # Authentication hook
 │   └── useCopyToClipboard.jsx # Custom hook for copy functionality
 ├── contexts/
-│   └── AuthProvider.jsx     # Global auth state management
+│   └── AuthProvider.jsx     # Global auth state jmanagement
 ├── routes/
 │   ├── Routes.jsx
 │   └── PrivateRoute.jsx
