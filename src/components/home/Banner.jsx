@@ -21,8 +21,6 @@ const Banner = () => {
             pagination={{ clickable: true }}
             // scrollbar={{ draggable: true }}
             autoplay={{ delay: 2500, disableOnInteraction: false }} // Autoplay settings
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
         >
             <SwiperSlide><img className='w-full h-48 md:h-[400px]' src="https://i.ibb.co/92KVCDG/3c2b446b-8e72-4614-9bd2-e66877879578-BD-1976-688-jpg-2200x2200q80.jpg" alt="" /></SwiperSlide>
             <SwiperSlide><img className='w-full h-48 md:h-[400px]' src="https://i.ibb.co/qpzPzZM/16f8731e-2627-4e01-9b4a-39e222cd4c73-BD-1976-688-jpg-2200x2200q80.jpg" alt="" /></SwiperSlide>

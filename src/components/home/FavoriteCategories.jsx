@@ -14,7 +14,7 @@ const FavoriteCategories = () => {
         <div className="py-10">
             <h2 className="text-3xl text-[#E1713B] font-bold text-center">Favorite Categories</h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-11/12 mx-auto mt-14">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-11/12 mx-auto mt-14">
                 {
                     categories.map(category => (
                         <div key={category.id} className="card bg-base-100 transition-transform duration-300 ease-in-out transform hover:scale-110">
