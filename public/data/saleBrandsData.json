@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Pickaboo",
+        "category": "E-commerce",
+        "totalCoupons": 5,
+        "imageUrl": "https://i.ibb.co/9bcQjMh/Pickaboo.png"
+    },
+    {
+        "title": "Pngegg",
+        "category": "Graphics",
+        "totalCoupons": 7,
+        "imageUrl": "https://i.ibb.co/0sZttFq/pngegg.png"
+    },
+    {
+        "title": "Ali Express",
+        "category": "E-commerce",
+        "totalCoupons": 8,
+        "imageUrl": "https://i.ibb.co/Jp9n94v/Ali-Express-Logo-wine.png"
+    },
+    {
+        "title": "Pngwing",
+        "category": "Graphics",
+        "totalCoupons": 6,
+        "imageUrl": "https://i.ibb.co/qJXjTHc/pngwing-com.png"
+    },
+    {
+        "title": "Pngwing",
+        "category": "Graphics",
+        "totalCoupons": 6,
+        "imageUrl": "https://i.ibb.co/f0HtCDd/pngwing-com-2.png"
+    },
+    {
+        "title": "Daraz",
+        "category": "E-commerce",
+        "totalCoupons": 10,
+        "imageUrl": "https://i.ibb.co/cyzXc18/Daraz-1.png"
+    },
+    {
+        "title": "Foodpanda",
+        "category": "Food Delivery",
+        "totalCoupons": 7,
+        "imageUrl": "https://i.ibb.co/VN24CFm/Foodpanda-Logo-wine.png"
+    },
+    {
+        "title": "Farfetch",
+        "category": "Fashion",
+        "totalCoupons": 5,
+        "imageUrl": "https://i.ibb.co/9vHvRj6/farfetch-logo-vector.png"
+    },
+    {
+        "title": "Foreo",
+        "category": "Beauty",
+        "totalCoupons": 4,
+        "imageUrl": "https://i.ibb.co/VCfCR37/FOREO-Logo-500x281.png"
+    },
+    {
+        "title": "Amazon",
+        "category": "Retail",
+        "totalCoupons": 12,
+        "imageUrl": "https://i.ibb.co/tKpGVk8/amazon.png"
+    },
+    {
+        "title": "Rokomari",
+        "category": "Books",
+        "totalCoupons": 6,
+        "imageUrl": "https://i.ibb.co/1mdKKVm/rokomari.jpg"
+    },
+    {
+        "title": "Bikroy",
+        "category": "Classifieds",
+        "totalCoupons": 9,
+        "imageUrl": "https://i.ibb.co/MB37L9n/bikroy.png"
+    }
+]

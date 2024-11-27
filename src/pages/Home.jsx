@@ -1,3 +1,4 @@
+import SaleBrands from "../components/home/SaleBrands";
 import TopBrands from "../components/home/TopBrands";
 import Header from "../components/shared/Header";
 
@@ -7,6 +8,9 @@ const Home = () => {
             <Header />
             <div className="mt-16">
                 <TopBrands />
+            </div>
+            <div className="mt-16">
+                <SaleBrands />
             </div>
         </div>
     );
