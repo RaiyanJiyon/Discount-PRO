@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "category": "Animals & Pet Supplies",
+        "image": "https://couponhive-46f22.web.app/assets/favourite-1-AFmSryLW.png"
+    },
+    {
+        "id": 2,
+        "category": "Luggage & Bags",
+        "image": "https://couponhive-46f22.web.app/assets/favourite-2-CTj9OWjV.png"
+    },
+    {
+        "id": 3,
+        "category": "Media",
+        "image": "https://couponhive-46f22.web.app/assets/Media-BL1VkgJW.png"
+    },
+    {
+        "id": 4,
+        "category": "Mobile Apps",
+        "image": "https://couponhive-46f22.web.app/assets/Mobile-Apps-Bc0i3XHP.png"
+    },
+    {
+        "id": 5,
+        "category": "Money & Banking",
+        "image": "https://couponhive-46f22.web.app/assets/Money-Banking-BRjmJurB.png"
+    },
+    {
+        "id": 6,
+        "category": "Office Supplies",
+        "image": "https://couponhive-46f22.web.app/assets/Office-Supplies-B7ecbPyN.png"
+    },
+    {
+        "id": 7,
+        "category": "Printable",
+        "image": "https://couponhive-46f22.web.app/assets/Printable-DT4LMiy9.png"
+    },
+    {
+        "id": 8,
+        "category": "Restaurant",
+        "image": "https://couponhive-46f22.web.app/assets/Restaurant-Yr77MdQ6.png"
+    },
+    {
+        "id": 9,
+        "category": "Travel",
+        "image": "https://couponhive-46f22.web.app/assets/Travel-BzRz5nDm.png"
+    }
+]
