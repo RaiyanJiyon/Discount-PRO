@@ -13,13 +13,12 @@ const CouponCard = ({ brand }) => {
                             <p className="text-sm text-gray-700">Expires: {coupon.expiry_date}</p>
                             <p className="text-sm text-gray-700">Condition: {coupon.condition}</p>
                             <p className="text-sm text-gray-700">Type: {coupon.coupon_type}</p>
-                            <div className="card-actions justify-end w-full">
+                            <div className="card-actions justify-end w-full mt-4">
                                 <Button text="Copy Code" />
                                 <button className="btn bg-green-600 text-white font-bold w-full">Use Now</button>
                             </div>
                         </div>
                     </div>
-
                 ))
             }
         </div>
