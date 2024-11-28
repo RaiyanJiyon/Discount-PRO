@@ -1,3 +1,4 @@
+import BrandCard from "../../components/brands/BrandCard";
 import SearchBar from "../../components/brands/SearchBar";
 import Navbar from "../../components/shared/Navbar";
 
@@ -8,6 +9,10 @@ const BrandsPage = () => {
             
             <div>
                 <SearchBar />
+            </div>
+            
+            <div>
+                <BrandCard />
             </div>
         </div>
     );
