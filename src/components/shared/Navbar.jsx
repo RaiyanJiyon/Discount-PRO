@@ -11,6 +11,8 @@ const Navbar = () => {
     const { user, logOutUser } = useContext(authContext);
     const navigate = useNavigate();
 
+    console.log(user);
+
     const links = (
         <>
             <NavLink to="/" className={({ isActive }) => isActive ? "text-[#E1713B] font-bold underline" : "text-black font-medium"}>
@@ -82,7 +84,7 @@ const Navbar = () => {
                             <div className="w-10 rounded-full">
                                 <img
                                     alt={`${user.displayName} profile image`}
-                                    src={user ? user.photoURL : ""} />
+                                    src={user ? user.photoURL : "https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png"} />
                             </div>
                         </button>
                         <ul

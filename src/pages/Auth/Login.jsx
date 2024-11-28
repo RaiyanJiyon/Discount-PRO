@@ -8,10 +8,22 @@ import SuccessToaster from '../../components/ToasterNotification/SuccessToaster'
 import ErrorToaster from '../../components/ToasterNotification/ErrorToaster';
 
 const Login = () => {
-    const { user, setUser, loginUser } = useContext(authContext);
+    const { user, setUser, createUserWithGoogle, loginUser } = useContext(authContext);
 
     const location = useLocation();
     const navigate = useNavigate();
+
+    const handleGoogleSignIn = () => {
+        createUserWithGoogle()
+            .then(() => {
+                SuccessToaster("Successfully Logged In with Google");
+                navigate(location?.state ? location.state : "/");
+            })
+            .catch(error => {
+                ErrorToaster(error.message);
+            });
+    };
+
 
     const handleLoginForm = (e) => {
         e.preventDefault();
@@ -24,10 +36,12 @@ const Login = () => {
 
         console.log({ email, password });
 
+
         loginUser(email, password)
             .then(userCredential => {
                 console.log(userCredential.user);
                 SuccessToaster('Successfully Logged In');
+
                 form.reset();
                 navigate(location?.state ? location.state : '/');
             })
@@ -50,7 +64,7 @@ const Login = () => {
                         </h1>
                         <form onSubmit={handleLoginForm} className="space-y-4 md:space-y-6" action="#">
                             <div className="flex flex-col md:flex-row items-center justify-between gap-2">
-                                <div className="flex items-center md:justify-center gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
+                                <div onClick={handleGoogleSignIn} className="flex items-center md:justify-center gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
                                     <FaGoogle className="text-xl" />
                                     <span className="text-sm font-medium">Log in with Google</span>
                                 </div>

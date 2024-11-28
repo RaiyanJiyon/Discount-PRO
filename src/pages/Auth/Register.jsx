@@ -8,9 +8,20 @@ import ErrorToaster from '../../components/ToasterNotification/ErrorToaster';
 import SuccessToaster from '../../components/ToasterNotification/SuccessToaster';
 
 const Register = () => {
-    const { setUser, user, createUserWithEmail } = useContext(authContext);
+    const { setUser, user, createUserWithGoogle, createUserWithEmail } = useContext(authContext);
 
     const navigate = useNavigate();
+
+    const handleGoogleSignIn = () => {
+        createUserWithGoogle()
+            .then(() => {
+                SuccessToaster('Successfully Sign In with Google');
+                navigate('/');
+            })
+            .catch(error => {
+                ErrorToaster(error.message);
+            });
+    };
 
     const handleRegisterForm = (e) => {
         e.preventDefault();
@@ -42,10 +53,11 @@ const Register = () => {
             .then(userCredential => {
                 console.log(userCredential.user);
                 SuccessToaster('Successfully Signed In');
-                setUser(user, {
+                setUser({
+                    user,
                     displayName: name,
                     photoURL: photoURL
-                });
+                })
                 form.reset();
                 navigate('/auth/login');
             })
@@ -68,7 +80,7 @@ const Register = () => {
                         </h1>
                         <form onSubmit={handleRegisterForm} className="space-y-4 md:space-y-6" action="#">
                             <div className="flex flex-col md:flex-row items-center justify-between gap-2">
-                                <div className="flex items-center md:justify-center gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
+                                <div onClick={handleGoogleSignIn} className="flex items-center md:justify-center gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
                                     <FaGoogle className="text-xl" />
                                     <span className="text-xs font-medium">Sign up with Google</span>
                                 </div>
