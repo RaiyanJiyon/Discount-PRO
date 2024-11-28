@@ -52,7 +52,7 @@ const Register = () => {
         createUserWithEmail(email, password)
             .then(userCredential => {
                 console.log(userCredential.user);
-                SuccessToaster('Successfully Signed In');
+                SuccessToaster('Successfully Create an Account');
                 setUser({
                     user,
                     displayName: name,
