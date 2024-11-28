@@ -1,10 +1,14 @@
+import SearchBar from "../../components/brands/SearchBar";
 import Navbar from "../../components/shared/Navbar";
 
 const BrandsPage = () => {
     return (
         <div>
             <Navbar />
-            <h1>Brands Page</h1>
+            
+            <div>
+                <SearchBar />
+            </div>
         </div>
     );
 };
