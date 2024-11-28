@@ -1,7 +1,7 @@
 const AboutCouponPro = () => {
     return (
         <div>
-            <div className="w-1/2 mx-auto space-y-2 text-center">
+            <div className="w-11/12 md:w-1/2 mx-auto space-y-2 text-center">
                 <h3 className="text-[#E1713B] font-bold text-2xl">About CouponHive</h3>
                 <h3 className="font-bold text-2xl">Top Place For Coupon Codes & Discount Offers</h3>
             </div>

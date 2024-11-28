@@ -53,10 +53,10 @@ const Navbar = () => {
 
             </div>
             <div className="navbar-end gap-3">
-                <Link to={"auth/register"}>
+                <Link to={"/auth/register"}>
                     <button className="btn bg-[#E1713B] text-white font-bold"><FaUser />Sign Up</button>
                 </Link>
-                <Link to={"auth/login"}>
+                <Link to={"/auth/login"}>
                     <button className="btn bg-[#E1713B] text-white font-bold"><FaArrowRightToBracket />Sign In</button>
                 </Link>
             </div>

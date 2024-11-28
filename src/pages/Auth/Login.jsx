@@ -5,7 +5,7 @@ import Button from '../../components/ui/Button';
 
 const Login = () => {
     return (
-        <section className="bg-gray-50 mt-6">
+        <section className="mt-6">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
                 <Link to={"/"} className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
                     <img className="w-8 h-8 mr-2" src={logo} alt="logo" />

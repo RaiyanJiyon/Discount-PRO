@@ -1,11 +1,61 @@
 import logo from '../../assets/images/logo.png'
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from '../../components/ui/Button';
+import { useContext } from 'react';
+import { authContext } from '../../contexts/AuthProvider';
+import ErrorToaster from '../../components/ToasterNotification/ErrorToaster';
+import SuccessToaster from '../../components/ToasterNotification/SuccessToaster';
 
 const Register = () => {
+    const { setUser, user, createUserWithEmail } = useContext(authContext);
+
+    const navigate = useNavigate();
+
+    const handleRegisterForm = (e) => {
+        e.preventDefault();
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const photoURL = formData.get('photoURL');
+        const password = formData.get('password');
+        const confirmPassword = formData.get('confirm-password');
+
+        console.log({ name, email, photoURL, password, confirmPassword });
+
+        const validPassword = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+
+        if (!validPassword.test(password)) {
+            ErrorToaster('Password should be at least 8 character');
+            return;
+        };
+
+        if (password !== confirmPassword) {
+            ErrorToaster('The password confirmation does not match.');
+            return;
+        };
+
+        createUserWithEmail(email, password)
+            .then(userCredential => {
+                console.log(userCredential.user);
+                SuccessToaster('Successfully Signed In');
+                setUser(user, {
+                    displayName: name,
+                    photoURL: photoURL
+                });
+                form.reset();
+                navigate('/auth/login');
+            })
+            .catch(error => {
+                ErrorToaster(error.message);
+            });
+    };
+
     return (
-        <section className="bg-gray-50">
+        <section>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto mt-6 lg:py-0">
                 <Link to={"/"} className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
                     <img className="w-8 h-8 mr-2" src={logo} alt="logo" />
@@ -16,7 +66,7 @@ const Register = () => {
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                             Create an account
                         </h1>
-                        <form className="space-y-4 md:space-y-6" action="#">
+                        <form onSubmit={handleRegisterForm} className="space-y-4 md:space-y-6" action="#">
                             <div className="flex flex-col md:flex-row items-center justify-between gap-2">
                                 <div className="flex items-center md:justify-center gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
                                     <FaGoogle className="text-xl" />

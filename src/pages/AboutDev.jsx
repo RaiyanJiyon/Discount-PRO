@@ -6,7 +6,9 @@ import Navbar from "../components/shared/Navbar";
 const AboutDev = () => {
     return (
         <div>
-            <Navbar />
+            <div>
+                <Navbar />
+            </div>
             <div className="mt-6">
                 <img src="https://couponhive-46f22.web.app/assets/about-us-banner-BN-dhTZy.jpg" alt="" />
             </div>
