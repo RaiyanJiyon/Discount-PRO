@@ -1,9 +1,41 @@
 import logo from '../../assets/images/logo.png'
 import { FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from '../../components/ui/Button';
+import { useContext } from 'react';
+import { authContext } from '../../contexts/AuthProvider';
+import SuccessToaster from '../../components/ToasterNotification/SuccessToaster';
+import ErrorToaster from '../../components/ToasterNotification/ErrorToaster';
 
 const Login = () => {
+    const { user, setUser, loginUser } = useContext(authContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const handleLoginForm = (e) => {
+        e.preventDefault();
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+
+        const email = formData.get('email');
+        const password = formData.get('password');
+
+        console.log({ email, password });
+
+        loginUser(email, password)
+            .then(userCredential => {
+                console.log(userCredential.user);
+                SuccessToaster('Successfully Logged In');
+                form.reset();
+                navigate(location?.state ? location.state : '/');
+            })
+            .catch(error => {
+                console.error(error.message);
+                ErrorToaster(error.message);
+            });
+    }
     return (
         <section className="mt-6">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
@@ -16,7 +48,7 @@ const Login = () => {
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                             Sign in to your account
                         </h1>
-                        <form className="space-y-4 md:space-y-6" action="#">
+                        <form onSubmit={handleLoginForm} className="space-y-4 md:space-y-6" action="#">
                             <div className="flex flex-col md:flex-row items-center justify-between gap-2">
                                 <div className="flex items-center md:justify-center gap-2 w-full border border-gray-300 px-4 py-2 rounded-lg cursor-pointer">
                                     <FaGoogle className="text-xl" />
