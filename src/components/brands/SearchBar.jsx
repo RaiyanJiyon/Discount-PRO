@@ -25,7 +25,7 @@ const SearchBar = () => {
     return (
         <div className="pt-6">
             <h2 className="text-2xl text-[#E1713B] font-bold text-center">Explore All Brands</h2>
-            <div className="w-96 mx-auto mt-4">
+            <div className="w-64 md:w-96 mx-auto mt-4">
                 <label className="input input-bordered flex items-center gap-2 rounded-full">
                     <input
                         type="text"
