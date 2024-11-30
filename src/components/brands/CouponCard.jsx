@@ -1,10 +1,15 @@
 import CopyToClipboard from "react-copy-to-clipboard";
-import Button from "../ui/Button";
+import 'react-toastify/dist/ReactToastify.css';
+import SuccessToaster from "../ToasterNotification/SuccessToaster";
+import { useNavigate } from "react-router-dom";
 
 const CouponCard = ({ brand }) => {
+    const navigate = useNavigate();
+
     const handleCopyClip = (couponCode) => {
-        console.log(`Copied: ${couponCode}`);
+        SuccessToaster(`Copied: ${couponCode}`);
     };
+
 
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6 mb-20">
@@ -20,7 +25,9 @@ const CouponCard = ({ brand }) => {
                             <CopyToClipboard text={coupon.coupon_code} onCopy={() => handleCopyClip(coupon.coupon_code)}>
                                 <button className="btn bg-orange-500 text-white font-bold w-full">Copy Code</button>
                             </CopyToClipboard>
-                            <button className="btn bg-green-600 text-white font-bold w-full">Use Now</button>
+                            <a href={brand.shop_link} target="_blank" className="w-full">
+                                <button className="btn bg-green-600 text-white font-bold w-full">Use Now</button>
+                            </a>
                         </div>
                     </div>
                 </div>
