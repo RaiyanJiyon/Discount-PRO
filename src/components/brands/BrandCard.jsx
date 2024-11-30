@@ -48,7 +48,13 @@ const BrandCard = ({ searchTerm }) => {
                         <h2 className="card-title text-xl">{brand.brand_name}</h2>
                         <StarRating rating={brand.rating} />
                         <p className="text-[#4b5563] text-xs font-medium">{brand.description}</p>
-                        <SaleStatus isSaleOn={brand.isSaleOn} />
+                        {
+                                brand.isSaleOn ? (
+                                    <p data-aos="fade-down" className="text-red-500 font-bold">Sale is On</p>
+                                ) : (
+                                    <p className="font-bold">No Sale Right Now</p>
+                                )
+                        }
                         <Link className="w-full mt-4" to={`/brands/${brand.id}`}>
                             <Button text="View Coupons" />
                         </Link>
@@ -68,14 +74,6 @@ const StarRating = ({ rating }) => (
         starDimension="20px"
         starSpacing="2px"
     />
-);
-
-const SaleStatus = ({ isSaleOn }) => (
-    isSaleOn ? (
-        <p className="text-red-500 font-bold">Sale is On</p>
-    ) : (
-        <p className="font-bold">No Sale Right Now</p>
-    )
 );
 
 export default BrandCard;

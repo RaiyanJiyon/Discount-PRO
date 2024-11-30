@@ -54,7 +54,7 @@ const Login = () => {
             })
             .catch(error => {
                 console.error(error.message);
-                ErrorToaster(error.message);
+                ErrorToaster("Incorrect username or password.");
             });
     };
 
