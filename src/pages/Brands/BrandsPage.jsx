@@ -3,12 +3,14 @@ import BrandCard from "../../components/brands/BrandCard";
 import SearchBar from "../../components/brands/SearchBar";
 import Footer from "../../components/shared/Footer";
 import Navbar from "../../components/shared/Navbar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const BrandsPage = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+    
+    const [searchTerm, setSearchTerm] = useState("");
     
     return (
         <div>
@@ -21,11 +23,11 @@ const BrandsPage = () => {
             </div>
 
             <div>
-                <SearchBar />
+                <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
             </div>
 
             <div>
-                <BrandCard />
+                <BrandCard searchTerm={searchTerm} />
             </div>
 
             <div>

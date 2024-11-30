@@ -105,7 +105,7 @@ const Navbar = () => {
                             <button className="hidden sm:flex btn bg-[#E1713B] text-white font-bold"><FaUser />Sign Up</button>
                         </Link>
                         <Link to="/auth/login">
-                            <button className="btn bg-[#E1713B] text-white font-bold"><FaArrowRightToBracket />Sign In</button>
+                            <button className="btn btn-sm sm:btn-md bg-[#E1713B] text-white font-bold"><FaArrowRightToBracket />Sign In</button>
                         </Link>
                     </>
                 )}

@@ -39,7 +39,7 @@ const TopBrands = () => {
                     {brands.map((brand, index) => (
                         <img
                             key={index}
-                            className="w-28 mr-6"
+                            className="w-28 mr-6 cursor-pointer"
                             onClick={handleLogo}
                             src={brand.brand_logo}
                             alt={brand.brand_name || "Brand logo"}

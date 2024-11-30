@@ -3,7 +3,7 @@ import Button from "../ui/Button";
 import StarRatings from "react-star-ratings";
 import { Link } from "react-router-dom";
 
-const BrandCard = () => {
+const BrandCard = ({ searchTerm }) => {
     const [brands, setBrands] = useState([]);
     const [error, setError] = useState(null);
 
@@ -22,13 +22,17 @@ const BrandCard = () => {
         fetchBrands();
     }, []);
 
+    const filteredBrands = brands.filter((brand) =>
+        (brand.brand_name || '').toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     if (error) {
         return <div className="text-red-500 text-center">Error: {error}</div>;
-    }
+    };
 
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-6 w-11/12 max-w-7xl mx-auto my-16">
-            {brands.map(brand => (
+            {filteredBrands.map(brand => (
                 <div
                     key={brand.id}
                     className="card bg-base-100 border border-gray-200 shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110"
