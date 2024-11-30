@@ -1,8 +1,8 @@
 import logo from '../../assets/images/logo.png'
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from '../../components/ui/Button';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { authContext } from '../../contexts/AuthProvider';
 import SuccessToaster from '../../components/ToasterNotification/SuccessToaster';
 import ErrorToaster from '../../components/ToasterNotification/ErrorToaster';
@@ -13,8 +13,9 @@ const Login = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    
+
     const { user, setUser, createUserWithGoogle, loginUser } = useContext(authContext);
+    const [toggle, setToggle] = useState(false);
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -64,7 +65,11 @@ const Login = () => {
                 email: emailInput.value,
             }
         })
-    }
+    };
+
+    const handleToggle = () => {
+        setToggle((prev) => !prev);
+    };
 
 
     return (
@@ -100,7 +105,10 @@ const Login = () => {
                             </div>
                             <div>
                                 <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900">Password</label>
-                                <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required />
+                                <input type={toggle ? "text" : "password"} name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required />
+                            </div>
+                            <div onClick={handleToggle} className='relative w-6 -top-[54px] left-80 cursor-pointer'>
+                                {toggle ? <FaEyeSlash /> : <FaEye />}
                             </div>
                             <div className="flex items-center justify-between">
                                 <div className="flex items-start">
