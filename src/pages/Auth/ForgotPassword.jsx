@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { authContext } from "../../contexts/AuthProvider";
 import SuccessToaster from "../../components/ToasterNotification/SuccessToaster";
 import ErrorToaster from "../../components/ToasterNotification/ErrorToaster";
-
+import 'react-toastify/dist/ReactToastify.css';
 
 const ForgotPassword = () => {
     const { passwordReset } = useContext(authContext);

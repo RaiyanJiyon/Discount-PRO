@@ -3,6 +3,7 @@ import { authContext } from "../../contexts/AuthProvider";
 import SuccessToaster from "../../components/ToasterNotification/SuccessToaster";
 import { useNavigate } from "react-router-dom";
 import ErrorToaster from "../../components/ToasterNotification/ErrorToaster";
+import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet";
 
 const UpdateProfile = () => {

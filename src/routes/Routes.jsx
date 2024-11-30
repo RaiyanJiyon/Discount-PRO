@@ -12,6 +12,7 @@ import ForgotPassword from '../pages/Auth/ForgotPassword';
 import Profile from '../pages/Profile/Profile';
 import UpdateProfile from '../pages/Profile/UpdateProfile';
 import AboutDev from '../pages/AboutDev';
+import Practice from '../pages/Practice';
 
 const router = createBrowserRouter([
     {
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
             {
                 path: 'about-dev',
                 element: <AboutDev />
+            },
+            {
+                path: 'practice',
+                element: <Practice />
             }
         ]
     }

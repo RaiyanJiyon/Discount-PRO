@@ -18,8 +18,6 @@ AOS.init({
   offset: 120,
 });
 
-
-
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>

@@ -7,6 +7,7 @@ import { authContext } from '../../contexts/AuthProvider';
 import SuccessToaster from '../../components/ToasterNotification/SuccessToaster';
 import ErrorToaster from '../../components/ToasterNotification/ErrorToaster';
 import { Helmet } from 'react-helmet';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const { user, setUser, createUserWithGoogle, loginUser } = useContext(authContext);

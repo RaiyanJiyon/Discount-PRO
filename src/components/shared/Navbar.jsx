@@ -6,6 +6,7 @@ import { authContext } from '../../contexts/AuthProvider';
 import { useContext } from 'react';
 import SuccessToaster from '../ToasterNotification/SuccessToaster';
 import ErrorToaster from '../ToasterNotification/ErrorToaster';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
     const { user, logOutUser } = useContext(authContext);
