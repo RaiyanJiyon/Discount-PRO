@@ -35,9 +35,9 @@ const router = createBrowserRouter([
                         path: ':id',
                         loader: () => fetch('/public/data/couponData.json'),
                         element: (
-                            
+                            <PrivateRoute>
                                 <BrandDetails />
-                            
+                            </PrivateRoute>
                         )
                     }
                 ]
@@ -67,17 +67,18 @@ const router = createBrowserRouter([
                     {
                         path: '',
                         element: (
-           
+                            <PrivateRoute>
                                 <Profile />
-                          
+                            </PrivateRoute>
+
                         )
                     },
                     {
                         path: 'update',
                         element: (
-
+                            <PrivateRoute>
                                 <UpdateProfile />
-
+                            </PrivateRoute>
                         )
                     }
                 ]
