@@ -4,8 +4,13 @@ import BrandProfile from "../../components/brands/BrandProfile";
 import CouponCard from "../../components/brands/CouponCard";
 import Footer from "../../components/shared/Footer";
 import { Helmet } from "react-helmet";
+import { useEffect } from "react";
 
 const BrandDetails = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
     const loaderBrands = useLoaderData();
     const { id } = useParams();
 

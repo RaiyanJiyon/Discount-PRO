@@ -2,7 +2,7 @@ import logo from '../../assets/images/logo.png'
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import Button from '../../components/ui/Button';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { authContext } from '../../contexts/AuthProvider';
 import ErrorToaster from '../../components/ToasterNotification/ErrorToaster';
 import SuccessToaster from '../../components/ToasterNotification/SuccessToaster';
@@ -10,6 +10,11 @@ import { Helmet } from 'react-helmet';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
+
     const { setUser, user, createUserWithGoogle, createUserWithEmail } = useContext(authContext);
 
     const navigate = useNavigate();

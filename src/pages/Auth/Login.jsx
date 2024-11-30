@@ -2,7 +2,7 @@ import logo from '../../assets/images/logo.png'
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from '../../components/ui/Button';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { authContext } from '../../contexts/AuthProvider';
 import SuccessToaster from '../../components/ToasterNotification/SuccessToaster';
 import ErrorToaster from '../../components/ToasterNotification/ErrorToaster';
@@ -10,6 +10,10 @@ import { Helmet } from 'react-helmet';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
     const { user, setUser, createUserWithGoogle, loginUser } = useContext(authContext);
 
     const location = useLocation();
@@ -107,7 +111,7 @@ const Login = () => {
                                         <label htmlFor="remember" className="text-gray-500">Remember me</label>
                                     </div>
                                 </div>
-                                <span onClick={navigateToForgetPassword} className="text-sm font-medium text-[#1e0e5c] hover:underline cursor-pointer">Forgot password?</span>
+                                <span onClick={navigateToForgetPassword} className="text-sm font-medium text-[#E1713B] hover:underline cursor-pointer">Forgot password?</span>
                             </div>
                             <Button text='Sign In' />
                             <p className="text-sm font-light text-gray-500">

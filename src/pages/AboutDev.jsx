@@ -3,8 +3,13 @@ import AboutCouponPro from "../components/about/AboutCouponPro";
 import ExtraSavings from "../components/about/ExtraSavings";
 import Footer from "../components/shared/Footer";
 import Navbar from "../components/shared/Navbar";
+import { useEffect } from "react";
 
 const AboutDev = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
     return (
         <div>
             <Helmet>

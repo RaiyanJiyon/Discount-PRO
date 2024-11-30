@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { authContext } from "../../contexts/AuthProvider";
 import SuccessToaster from "../../components/ToasterNotification/SuccessToaster";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet";
 
 const UpdateProfile = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
     const { setUser, updateUserProfile } = useContext(authContext);
     const navigate = useNavigate();
 

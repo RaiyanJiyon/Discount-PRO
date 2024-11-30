@@ -1,12 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { authContext } from "../../contexts/AuthProvider";
 import SuccessToaster from "../../components/ToasterNotification/SuccessToaster";
 import ErrorToaster from "../../components/ToasterNotification/ErrorToaster";
 import 'react-toastify/dist/ReactToastify.css';
 
 const ForgotPassword = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
+
     const { passwordReset } = useContext(authContext);
     const location = useLocation();
     const [email, setEmail] = useState(location.state?.email || '');

@@ -1,10 +1,14 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Navbar from "../../components/shared/Navbar";
 import { authContext } from "../../contexts/AuthProvider";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 const Profile = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
     const { user } = useContext(authContext);
     console.log(user)
     return (

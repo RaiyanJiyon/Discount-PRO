@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
     return (
         <div className='h-screen md:w-1/2 mx-auto flex flex-col justify-center items-center space-y-4'>
             <Helmet>
