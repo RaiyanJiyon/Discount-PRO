@@ -12,7 +12,7 @@ const CouponCard = ({ brand }) => {
 
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-11/12 mx-auto mt-6 mb-20">
             {brand.coupons.map((coupon, idx) => (
                 <div key={idx} className="card bg-base-100 border border-gray-200 shadow-xl">
                     <div className="card-body">

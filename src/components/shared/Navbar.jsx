@@ -64,11 +64,11 @@ const Navbar = () => {
                     </button>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[10] mt-3 w-52 p-2 shadow">
                         {links}
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost flex items-center">
+                <Link to="/" className="btn btn-ghost flex items-center ">
                     <img className="w-8" src={logo} alt="brand logo" />
                     <span className="text-2xl font-bold text-[#E1713B]">CouponPro</span>
                 </Link>
@@ -102,7 +102,7 @@ const Navbar = () => {
                 ) : (
                     <>
                         <Link to="/auth/register">
-                            <button className="btn bg-[#E1713B] text-white font-bold"><FaUser />Sign Up</button>
+                            <button className="hidden sm:flex btn bg-[#E1713B] text-white font-bold"><FaUser />Sign Up</button>
                         </Link>
                         <Link to="/auth/login">
                             <button className="btn bg-[#E1713B] text-white font-bold"><FaArrowRightToBracket />Sign In</button>
