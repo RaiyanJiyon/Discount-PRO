@@ -50,7 +50,18 @@ const Login = () => {
                 console.error(error.message);
                 ErrorToaster(error.message);
             });
+    };
+
+    const navigateToForgetPassword = () => {
+        const emailInput = document.getElementById('email');
+        navigate('/auth/forgot-password', {
+            state: {
+                email: emailInput.value,
+            }
+        })
     }
+
+
     return (
         <section className="mt-6">
             <Helmet>
@@ -95,7 +106,7 @@ const Login = () => {
                                         <label htmlFor="remember" className="text-gray-500">Remember me</label>
                                     </div>
                                 </div>
-                                <span className="text-sm font-medium text-[#1e0e5c] hover:underline">Forgot password?</span>
+                                <span onClick={navigateToForgetPassword} className="text-sm font-medium text-[#1e0e5c] hover:underline cursor-pointer">Forgot password?</span>
                             </div>
                             <Button text='Sign In' />
                             <p className="text-sm font-light text-gray-500">

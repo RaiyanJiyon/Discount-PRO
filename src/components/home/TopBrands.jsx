@@ -19,7 +19,7 @@ const brandImages = [
 const TopBrands = () => {
     return (
         <div>
-            <div className="space-y-4">
+            <div data-aos="zoom-in-down" className="space-y-4">
                 <h2 className="text-3xl text-[#E1713B] font-bold text-center">Top Brands</h2>
                 <p className="w-full md:w-4/5 mx-auto text-[#394e6a] text-lg text-center font-medium">
                     Explore the finest selection of top brands renowned for their quality and innovation.
@@ -28,7 +28,7 @@ const TopBrands = () => {
             </div>
 
             <div className="flex items-center mt-10">
-                <Marquee>
+                <Marquee pauseOnHover={true}>
                     {brandImages.map((brand, index) => (
                         <img key={index} className="w-28 mr-6" src={brand.src} alt={brand.alt} />
                     ))}

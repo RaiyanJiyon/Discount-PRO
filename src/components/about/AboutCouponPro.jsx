@@ -1,11 +1,11 @@
 const AboutCouponPro = () => {
     return (
         <div>
-            <div className="w-11/12 md:w-1/2 mx-auto space-y-2 text-center">
+            <div data-aos="zoom-in-right" className="w-11/12 md:w-1/2 mx-auto space-y-2 text-center">
                 <h3 className="text-[#E1713B] font-bold text-2xl">About CouponHive</h3>
                 <h3 className="font-bold text-2xl">Top Place For Coupon Codes & Discount Offers</h3>
             </div>
-            <div className="w-11/12 mx-auto space-y-4 mt-6">
+            <div data-aos="fade-right" className="w-11/12 mx-auto space-y-4 mt-6">
                 <p>
                     Ever wondered how you can make your online shopping experience rewarding? CouponHive allows you to get the value of your time and money through its wide range of coupon codes and discount offers. With CouponHive, you can end up saving extra amount on all your online purchases while getting different rewards such as cashback or gift vouchers on your favorite brands.
                 </p>

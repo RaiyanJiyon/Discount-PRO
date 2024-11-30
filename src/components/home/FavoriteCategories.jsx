@@ -12,7 +12,9 @@ const FavoriteCategories = () => {
 
     return (
         <div className="py-10">
-            <h2 className="text-3xl text-[#E1713B] font-bold text-center">Favorite Categories</h2>
+            <div data-aos="zoom-in-down">
+                <h2 className="text-3xl text-[#E1713B] font-bold text-center">Favorite Categories</h2>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-11/12 mx-auto mt-14">
                 {

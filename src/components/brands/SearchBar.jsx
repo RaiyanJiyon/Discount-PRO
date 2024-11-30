@@ -3,8 +3,8 @@ import { useState } from 'react';
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
-    const handleInputChange = (event) => {
-        setSearchTerm(event.target.value);
+    const handleInputChange = (e) => {
+        setSearchTerm(e.target.value);
     };
 
     const SearchIcon = (

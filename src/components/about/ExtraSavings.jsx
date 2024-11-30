@@ -19,7 +19,7 @@ const ExtraSavings = () => {
 
     return (
         <div>
-            <div className="md:w-4/5 mx-auto space-y-2 text-center">
+            <div data-aos="zoom-in-down" className="md:w-4/5 mx-auto space-y-2 text-center">
                 <h3 className="text-[#E1713B] font-bold text-2xl">How To Make Extra Savings With CouponHive</h3>
                 <p className="text-sm">
                     Want to spend less and shop more at the same time? CouponHive promo codes and discount offers allow you to make extra savings and
