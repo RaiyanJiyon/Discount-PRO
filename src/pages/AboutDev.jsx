@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import AboutCouponPro from "../components/about/AboutCouponPro";
 import ExtraSavings from "../components/about/ExtraSavings";
 import Footer from "../components/shared/Footer";
@@ -6,6 +7,10 @@ import Navbar from "../components/shared/Navbar";
 const AboutDev = () => {
     return (
         <div>
+            <Helmet>
+                <title>About | Coupon Pro</title>
+            </Helmet>
+            
             <div>
                 <Navbar />
             </div>

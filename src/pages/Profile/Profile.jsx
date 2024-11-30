@@ -2,12 +2,17 @@ import { useContext } from "react";
 import Navbar from "../../components/shared/Navbar";
 import { authContext } from "../../contexts/AuthProvider";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Profile = () => {
     const { user } = useContext(authContext);
     console.log(user)
     return (
         <div>
+            <Helmet>
+                <title>Profile | Coupon Pro</title>
+            </Helmet>
+
             <div>
                 <Navbar />
             </div>

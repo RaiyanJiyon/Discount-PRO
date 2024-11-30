@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { authContext } from '../../contexts/AuthProvider';
 import ErrorToaster from '../../components/ToasterNotification/ErrorToaster';
 import SuccessToaster from '../../components/ToasterNotification/SuccessToaster';
+import { Helmet } from 'react-helmet';
 
 const Register = () => {
     const { setUser, user, createUserWithGoogle, createUserWithEmail } = useContext(authContext);
@@ -68,6 +69,10 @@ const Register = () => {
 
     return (
         <section>
+            <Helmet>
+                <title>Register | Coupon Pro</title>
+            </Helmet>
+
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto mt-6 lg:py-0">
                 <Link to={"/"} className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
                     <img className="w-8 h-8 mr-2" src={logo} alt="logo" />

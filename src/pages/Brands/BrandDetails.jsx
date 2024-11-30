@@ -3,6 +3,7 @@ import Navbar from "../../components/shared/Navbar";
 import BrandProfile from "../../components/brands/BrandProfile";
 import CouponCard from "../../components/brands/CouponCard";
 import Footer from "../../components/shared/Footer";
+import { Helmet } from "react-helmet";
 
 const BrandDetails = () => {
     const loaderBrands = useLoaderData();
@@ -12,6 +13,10 @@ const BrandDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Brand Details | Coupon Pro</title>
+            </Helmet>
+
             <div>
                 <Navbar />
             </div>
@@ -20,8 +25,8 @@ const BrandDetails = () => {
                 <div className="flex justify-center items-center">
                     {filterBrands.map(brand => (
                         <div key={brand.id}>
-                        <BrandProfile key={brand.id} brand={brand} />
-                        <CouponCard key={brand.id} brand={brand} />
+                            <BrandProfile key={brand.id} brand={brand} />
+                            <CouponCard key={brand.id} brand={brand} />
                         </div>
                     ))}
                 </div>
