@@ -1,11 +1,20 @@
-import './App.css'
+import { useState } from 'react';
+import SearchBar from './components/SearchBar';
+import BrandCard from './components/BrandCard';
 
-function App() {
+const App = () => {
+    const [searchTerm, setSearchTerm] = useState('');
 
-  return (
-    <>
-    </>
-  )
-}
+    const handleInputChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
 
-export default App
+    return (
+        <div>
+            <SearchBar searchTerm={searchTerm} onInputChange={handleInputChange} />
+            <BrandCard searchTerm={searchTerm} />
+        </div>
+    );
+};
+
+export default App;
