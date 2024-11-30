@@ -1,22 +1,29 @@
+import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
-
-// List of brand images and their alt texts
-const brandImages = [
-    { src: "https://i.ibb.co/9bcQjMh/Pickaboo.png", alt: "Pickaboo" },
-    { src: "https://i.ibb.co/0sZttFq/pngegg.png", alt: "Pngegg" },
-    { src: "https://i.ibb.co/Jp9n94v/Ali-Express-Logo-wine.png", alt: "Ali Express" },
-    { src: "https://i.ibb.co/qJXjTHc/pngwing-com.png", alt: "Pngwing" },
-    { src: "https://i.ibb.co/f0HtCDd/pngwing-com-2.png", alt: "Pngwing" },
-    { src: "https://i.ibb.co/cyzXc18/Daraz-1.png", alt: "Daraz" },
-    { src: "https://i.ibb.co/VN24CFm/Foodpanda-Logo-wine.png", alt: "Foodpanda" },
-    { src: "https://i.ibb.co/9vHvRj6/farfetch-logo-vector.png", alt: "Farfetch" },
-    { src: "https://i.ibb.co/VCfCR37/FOREO-Logo-500x281.png", alt: "Foreo" },
-    { src: "https://i.ibb.co/tKpGVk8/amazon.png", alt: "Amazon" },
-    { src: "https://i.ibb.co/1mdKKVm/rokomari.jpg", alt: "Rokomari" },
-    { src: "https://i.ibb.co/MB37L9n/bikroy.png", alt: "Bikroy" }
-];
+import { useNavigate } from "react-router-dom";
 
 const TopBrands = () => {
+    const [brands, setBrands] = useState([]);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchBrands = async () => {
+            try {
+                const response = await fetch('/data/couponData.json');
+                const data = await response.json();
+                setBrands(data);
+            } catch (error) {
+                console.error("Error fetching brand data:", error.message);
+            }
+        };
+
+        fetchBrands();
+    }, []);
+
+    const handleLogo = () => {
+        navigate('/brands');
+    };
+
     return (
         <div>
             <div data-aos="zoom-in-down" className="space-y-4">
@@ -29,8 +36,14 @@ const TopBrands = () => {
 
             <div className="flex items-center mt-10">
                 <Marquee pauseOnHover={true}>
-                    {brandImages.map((brand, index) => (
-                        <img key={index} className="w-28 mr-6" src={brand.src} alt={brand.alt} />
+                    {brands.map((brand, index) => (
+                        <img
+                            key={index}
+                            className="w-28 mr-6"
+                            onClick={handleLogo}
+                            src={brand.brand_logo}
+                            alt={brand.brand_name || "Brand logo"}
+                        />
                     ))}
                 </Marquee>
             </div>
