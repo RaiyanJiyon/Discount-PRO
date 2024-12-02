@@ -1,4 +1,4 @@
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo.png';
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from '../../components/ui/Button';
@@ -31,7 +31,6 @@ const Login = () => {
             });
     };
 
-
     const handleLoginForm = (e) => {
         e.preventDefault();
 
@@ -42,7 +41,6 @@ const Login = () => {
         const password = formData.get('password');
 
         console.log({ email, password });
-
 
         loginUser(email, password)
             .then(userCredential => {
@@ -71,7 +69,6 @@ const Login = () => {
         setToggle((prev) => !prev);
     };
 
-
     return (
         <section className="mt-6">
             <Helmet>
@@ -84,7 +81,7 @@ const Login = () => {
                     Discount Pro
                 </Link>
                 <div className="w-full bg-white rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0">
-                    <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+                    <div className="relative p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                             Sign in to your account
                         </h1>
@@ -103,12 +100,12 @@ const Login = () => {
                                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
                                 <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="name@company.com" required />
                             </div>
-                            <div>
+                            <div className="relative">
                                 <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900">Password</label>
-                                <input type={toggle ? "text" : "password"} name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required />
-                            </div>
-                            <div onClick={handleToggle} className='relative w-6 -top-[54px] left-80 cursor-pointer'>
-                                {toggle ? <FaEyeSlash /> : <FaEye />}
+                                <input type={toggle ? "text" : "password"} name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 pr-10" required />
+                                <div onClick={handleToggle} className='absolute inset-y-0 right-0 flex items-center pr-3 pt-7 cursor-pointer'>
+                                    {toggle ? <FaEyeSlash /> : <FaEye />}
+                                </div>
                             </div>
                             <div className="flex items-center justify-between">
                                 <div className="flex items-start">
