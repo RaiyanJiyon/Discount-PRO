@@ -15,7 +15,7 @@ const Register = () => {
     }, []);
 
 
-    const { setUser, user, createUserWithGoogle, createUserWithEmail } = useContext(authContext);
+    const { setUser, user, updateUserProfile, createUserWithGoogle, createUserWithEmail } = useContext(authContext);
 
     const navigate = useNavigate();
 
@@ -58,13 +58,10 @@ const Register = () => {
 
         createUserWithEmail(email, password)
             .then(userCredential => {
-                console.log(userCredential.user);
-                SuccessToaster('Successfully Create an Account');
-                setUser({
-                    user,
-                    displayName: name,
-                    photoURL: photoURL
-                })
+                return updateUserProfile(name, photoURL);
+            })
+            .then(() => {
+                SuccessToaster('Successfully Created Account');
                 form.reset();
                 navigate('/auth/login');
             })

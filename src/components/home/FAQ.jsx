@@ -6,7 +6,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const FAQ = () => {
     return (
         <div className="bg-[#f8fafc] py-16">
-            <h2 className="text-3xl text-[#E1713B] font-bold text-center">Frequently Asked Questions</h2>
+            <h2 data-aos="fade-up" className="text-3xl text-[#E1713B] font-bold text-center">Frequently Asked Questions</h2>
 
             <div className='w-11/12 md:w-9/12 max-w-7xl mx-auto mt-10 space-y-4'>
                 <Accordion>
