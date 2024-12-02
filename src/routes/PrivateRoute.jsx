@@ -12,6 +12,10 @@ const PrivateRoute = ({ children }) => {
         </div>
     };
 
+    if (!user) {
+        return <div>Please log in to view your profile</div>;
+    }
+
     if (user) {
         return children;
     };

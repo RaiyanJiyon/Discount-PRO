@@ -12,6 +12,7 @@ const BrandCard = ({ searchTerm }) => {
             try {
                 const response = await fetch('/data/couponData.json');
                 const data = await response.json();
+                console.log(data); // Check the structure of the data
                 setBrands(data);
             } catch (error) {
                 setError("Error fetching data");

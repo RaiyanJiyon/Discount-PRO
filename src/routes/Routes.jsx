@@ -33,7 +33,7 @@ const router = createBrowserRouter([
                     },
                     {
                         path: ':id',
-                        loader: () => fetch('/public/data/couponData.json'),
+                        loader: () => fetch('/data/couponData.json'),
                         element: (
                             <PrivateRoute>
                                 <BrandDetails />
