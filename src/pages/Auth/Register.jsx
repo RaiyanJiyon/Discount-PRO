@@ -1,8 +1,8 @@
-import logo from '../../assets/images/logo.png'
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import logo from '../../assets/images/logo.png';
+import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import Button from '../../components/ui/Button';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { authContext } from '../../contexts/AuthProvider';
 import ErrorToaster from '../../components/ToasterNotification/ErrorToaster';
 import SuccessToaster from '../../components/ToasterNotification/SuccessToaster';
@@ -14,15 +14,16 @@ const Register = () => {
         window.scrollTo(0, 0);
     }, []);
 
-
     const { setUser, user, updateUserProfile, createUserWithGoogle, createUserWithEmail } = useContext(authContext);
+    const [passwordToggle, setPasswordToggle] = useState(false);
+    const [confirmPasswordToggle, setConfirmPasswordToggle] = useState(false);
 
     const navigate = useNavigate();
 
     const handleGoogleSignIn = () => {
         createUserWithGoogle()
             .then(() => {
-                SuccessToaster('Successfully Sign In with Google');
+                SuccessToaster('Successfully Signed In with Google');
                 navigate('/');
             })
             .catch(error => {
@@ -47,14 +48,14 @@ const Register = () => {
         const validPassword = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
         if (!validPassword.test(password)) {
-            ErrorToaster('Password should be at least 8 character');
+            ErrorToaster('Password should be at least 8 characters');
             return;
-        };
+        }
 
         if (password !== confirmPassword) {
             ErrorToaster('The password confirmation does not match.');
             return;
-        };
+        }
 
         createUserWithEmail(email, password)
             .then(userCredential => {
@@ -68,6 +69,14 @@ const Register = () => {
             .catch(error => {
                 ErrorToaster(error.message);
             });
+    };
+
+    const handlePasswordToggle = () => {
+        setPasswordToggle(prev => !prev);
+    };
+
+    const handleConfirmPasswordToggle = () => {
+        setConfirmPasswordToggle(prev => !prev);
     };
 
     return (
@@ -109,13 +118,19 @@ const Register = () => {
                                 <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900">Your email</label>
                                 <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="name@company.com" required />
                             </div>
-                            <div>
+                            <div className="relative">
                                 <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900">Password</label>
-                                <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required />
+                                <input type={passwordToggle ? "text" : "password"} name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 pr-10" required />
+                                <div onClick={handlePasswordToggle} className='absolute inset-y-0 right-0 flex items-center pr-3 pt-7 cursor-pointer'>
+                                    {passwordToggle ? <FaEyeSlash /> : <FaEye />}
+                                </div>
                             </div>
-                            <div>
+                            <div className="relative">
                                 <label htmlFor="confirm-password" className="block mb-2 text-sm font-medium text-gray-900">Confirm password</label>
-                                <input type="password" name="confirm-password" id="confirm-password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required />
+                                <input type={confirmPasswordToggle ? "text" : "password"} name="confirm-password" id="confirm-password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 pr-10" required />
+                                <div onClick={handleConfirmPasswordToggle} className='absolute inset-y-0 right-0 flex items-center pr-3 pt-7 cursor-pointer'>
+                                    {confirmPasswordToggle ? <FaEyeSlash /> : <FaEye />}
+                                </div>
                             </div>
                             <div className="flex items-start">
                                 <div className="flex items-center h-5">
