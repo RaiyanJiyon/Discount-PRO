@@ -24,8 +24,6 @@ const UpdateProfile = () => {
         const name = formData.get('name');
         const photoURL = formData.get('photoURL');
 
-        console.log({ name, photoURL })
-
         updateUserProfile(name, photoURL)
             .then(() => {
                 setUser(prev => {

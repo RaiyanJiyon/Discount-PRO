@@ -40,11 +40,8 @@ const Login = () => {
         const email = formData.get('email');
         const password = formData.get('password');
 
-        console.log({ email, password });
-
         loginUser(email, password)
             .then(userCredential => {
-                console.log(userCredential.user);
                 SuccessToaster('Successfully Logged In');
 
                 form.reset();

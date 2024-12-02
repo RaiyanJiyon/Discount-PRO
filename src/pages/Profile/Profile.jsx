@@ -10,7 +10,7 @@ const Profile = () => {
     }, []);
     
     const { user } = useContext(authContext);
-    console.log(user)
+    
     return (
         <div>
             <Helmet>

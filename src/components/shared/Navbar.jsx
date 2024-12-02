@@ -12,8 +12,6 @@ const Navbar = () => {
     const { user, logOutUser } = useContext(authContext);
     const navigate = useNavigate();
 
-    console.log(user);
-
     const links = (
         <>
             <NavLink to="/" className={({ isActive }) => isActive ? "text-[#E1713B] font-bold underline" : "text-black font-medium"}>

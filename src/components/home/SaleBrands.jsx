@@ -4,7 +4,7 @@ const SaleBrands = () => {
     const [brands, setBrands] = useState([]);
 
     useEffect(() => {
-        fetch('/data/saleBrandsData.json') // Ensure this path is correct
+        fetch('/data/saleBrandsData.json')
             .then(res => res.json())
             .then(data => setBrands(data))
             .catch(error => console.error('Error fetching data:', error));

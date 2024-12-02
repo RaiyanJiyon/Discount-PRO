@@ -43,8 +43,6 @@ const Register = () => {
         const password = formData.get('password');
         const confirmPassword = formData.get('confirm-password');
 
-        console.log({ name, email, photoURL, password, confirmPassword });
-
         const validPassword = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
         if (!validPassword.test(password)) {
