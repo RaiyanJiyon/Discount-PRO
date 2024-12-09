@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const SearchBar = ({ searchTerm, setSearchTerm }) => {
     const handleInputChange = (e) => {
         setSearchTerm(e.target.value);
@@ -36,6 +38,11 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
             </div>
         </div>
     );
+};
+
+SearchBar.propTypes = {
+    searchTerm: PropTypes.string.isRequired, // searchTerm must be a string and is required
+    setSearchTerm: PropTypes.func.isRequired, // setSearchTerm must be a function and is required
 };
 
 export default SearchBar;

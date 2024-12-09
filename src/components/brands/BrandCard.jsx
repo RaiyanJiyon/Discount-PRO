@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import Button from "../ui/Button";
 import StarRatings from "react-star-ratings";
 import { Link } from "react-router-dom";
@@ -49,11 +50,11 @@ const BrandCard = ({ searchTerm }) => {
                         <StarRating rating={brand.rating} />
                         <p className="text-[#4b5563] text-xs font-medium">{brand.description}</p>
                         {
-                                brand.isSaleOn ? (
-                                    <p data-aos="fade-down" className="text-red-500 font-bold">Sale is On</p>
-                                ) : (
-                                    <p className="font-bold">No Sale Right Now</p>
-                                )
+                            brand.isSaleOn ? (
+                                <p data-aos="fade-down" className="text-red-500 font-bold">Sale is On</p>
+                            ) : (
+                                <p className="font-bold">No Sale Right Now</p>
+                            )
                         }
                         <Link className="w-full mt-4" to={`/brands/${brand.id}`}>
                             <Button text="View Coupons" />
@@ -75,5 +76,15 @@ const StarRating = ({ rating }) => (
         starSpacing="2px"
     />
 );
+
+// Prop types for StarRating
+StarRating.propTypes = {
+    rating: PropTypes.number.isRequired, // rating must be a number and is required
+};
+
+// Prop types for BrandCard
+BrandCard.propTypes = {
+    searchTerm: PropTypes.string.isRequired, // searchTerm must be a string and is required
+};
 
 export default BrandCard;

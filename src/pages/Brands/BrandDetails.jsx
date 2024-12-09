@@ -30,8 +30,8 @@ const BrandDetails = () => {
                 <div className="flex justify-center items-center">
                     {filterBrands.map(brand => (
                         <div key={brand.id}>
-                            <BrandProfile key={brand.id} brand={brand} />
-                            <CouponCard key={brand.id} brand={brand} />
+                            <BrandProfile brand={brand} />
+                            <CouponCard brand={brand} />
                         </div>
                     ))}
                 </div>

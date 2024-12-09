@@ -6,7 +6,7 @@ Welcome to **Discount PRO**, a responsive, user-friendly coupon collection platf
 ---
 
 ## 🚀 Live Website Link  
-Explore the application live here: **[Discount PRO Live](https://polite-chimera-12ce81.netlify.app/)**  
+Explore the application live here: **[Discount PRO Live](https://675249a93f27107229a022bd--meek-gecko-b46b19.netlify.app/)**  
 
 ---
 

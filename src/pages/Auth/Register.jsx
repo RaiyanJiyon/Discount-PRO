@@ -14,7 +14,7 @@ const Register = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const { setUser, user, updateUserProfile, createUserWithGoogle, createUserWithEmail } = useContext(authContext);
+    const { updateUserProfile, createUserWithGoogle, createUserWithEmail } = useContext(authContext);
     const [passwordToggle, setPasswordToggle] = useState(false);
     const [confirmPasswordToggle, setConfirmPasswordToggle] = useState(false);
 

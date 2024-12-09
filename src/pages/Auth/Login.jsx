@@ -14,7 +14,7 @@ const Login = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const { user, setUser, createUserWithGoogle, loginUser } = useContext(authContext);
+    const {  createUserWithGoogle, loginUser } = useContext(authContext);
     const [toggle, setToggle] = useState(false);
 
     const location = useLocation();
@@ -43,7 +43,6 @@ const Login = () => {
         loginUser(email, password)
             .then(userCredential => {
                 SuccessToaster('Successfully Logged In');
-
                 form.reset();
                 navigate(location?.state ? location.state : '/');
             })

@@ -1,12 +1,23 @@
 import { createContext, useEffect, useState } from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import { app } from "../utils/firebase";
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, } from "firebase/auth";
+import {
+    createUserWithEmailAndPassword,
+    getAuth,
+    GoogleAuthProvider,
+    onAuthStateChanged,
+    sendPasswordResetEmail,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    signOut,
+    updateProfile,
+} from "firebase/auth";
 
 const authContext = createContext();
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState([null]);
+    const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
     const googleProvider = new GoogleAuthProvider();
@@ -35,20 +46,20 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: displayName,
-            photoURL: photoURL
+            photoURL: photoURL,
         });
     };
 
     const passwordReset = (email) => {
         setLoading(true);
         return sendPasswordResetEmail(auth, email);
-    }
+    };
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
             setLoading(false);
-        })
+        });
         return () => unsubscribe();
     }, []);
 
@@ -60,7 +71,8 @@ const AuthProvider = ({ children }) => {
         loginUser,
         logOutUser,
         updateUserProfile,
-        passwordReset
+        passwordReset,
+        loading,
     };
 
     return (
@@ -68,6 +80,11 @@ const AuthProvider = ({ children }) => {
             {children}
         </authContext.Provider>
     );
+};
+
+// Prop validation for AuthProvider
+AuthProvider.propTypes = {
+    children: PropTypes.node.isRequired, // Ensure that `children` is a valid React node and is required
 };
 
 export { AuthProvider, authContext };

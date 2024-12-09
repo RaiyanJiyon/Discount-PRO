@@ -1,11 +1,9 @@
+import PropTypes from "prop-types";
 import CopyToClipboard from "react-copy-to-clipboard";
 import 'react-toastify/dist/ReactToastify.css';
 import SuccessToaster from "../ToasterNotification/SuccessToaster";
-import { useNavigate } from "react-router-dom";
 
 const CouponCard = ({ brand }) => {
-    const navigate = useNavigate();
-
     const handleCopyClip = (couponCode) => {
         SuccessToaster(`Copied: ${couponCode}`);
     };
@@ -34,6 +32,11 @@ const CouponCard = ({ brand }) => {
             ))}
         </div>
     );
+};
+
+// Add prop validation
+CouponCard.propTypes = {
+    brand: PropTypes.object.isRequired, // children must be a object and is required
 };
 
 export default CouponCard;

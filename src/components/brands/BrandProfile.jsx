@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import StarRatings from "react-star-ratings";
 
 const BrandProfile = ({ brand }) => (
@@ -27,5 +28,15 @@ const StarRating = ({ rating }) => (
         starSpacing="2px"
     />
 );
+
+// Prop types for StarRating
+StarRating.propTypes = {
+    rating: PropTypes.number.isRequired, // rating must be a number and is required
+};
+
+// Add prop validation
+BrandProfile.propTypes = {
+    brand: PropTypes.object.isRequired, // children must be a object and is required
+};
 
 export default BrandProfile;
